@@ -1,4 +1,4 @@
-#include "ISort.h"
+﻿#include "ISort.h"
 #include"Algoritm.h"
 
 

@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include<vector>
 #include"Algoritm.h"
 #include"PersonalInterface.h"
@@ -8,7 +8,7 @@
 #include <memory>
 #include <string>
 #include <conio.h>
-#define QUIT 27//Присваивание Esc значение 27
+#define QUIT 27//РџСЂРёСЃРІР°РёРІР°РЅРёРµ Esc Р·РЅР°С‡РµРЅРёРµ 27
 enum YesOrNo
 {
 	yes = 1,
@@ -32,9 +32,9 @@ int main(void) {
 	sorts.emplace_back(std::make_shared <InsertionSort>());
 	do {
 
-		ShowGreetings();//Приветствие
-		Showtask();//Задание
-		ShowInputChoice();//Выбор ввода
+		ShowGreetings();//РџСЂРёРІРµС‚СЃС‚РІРёРµ
+		Showtask();//Р—Р°РґР°РЅРёРµ
+		ShowInputChoice();//Р’С‹Р±РѕСЂ РІРІРѕРґР°
 		UserChoice = Get3Choise();
 		double***  Matrix = nullptr;
 		
@@ -52,7 +52,7 @@ int main(void) {
 					Matrix[j][i] = new double[m];
 				}
 			}
-			 std::cout << "Введите данные" << std::endl;
+			 std::cout << "Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ" << std::endl;
 			 ConsoleInput(Matrix[0], n, m);
 			 break;
 		case random_input:
@@ -71,7 +71,7 @@ int main(void) {
 			Matrix[0] = InputDataFileInput(n, m);
 			break;
 		}
-		std::cout << "Исходная матрица" << std::endl;
+		std::cout << "РСЃС…РѕРґРЅР°СЏ РјР°С‚СЂРёС†Р°" << std::endl;
 		ConsoleOutput(Matrix[0], n, m);
 		if (UserChoice == manual_input || UserChoice == random_input) {
 			ShowInputOutType();
@@ -95,8 +95,8 @@ int main(void) {
 		if (UserChoice == yes) {
 			FileOutput(sorts, n, m , Matrix);
 		}
-		std::cout << "Нажмите Esc чтобы завершить работу программы." << std::endl;
-		std::cout << "Нажмите Enter чтобы продолжить." << std::endl;
+		std::cout << "РќР°Р¶РјРёС‚Рµ Esc С‡С‚РѕР±С‹ Р·Р°РІРµСЂС€РёС‚СЊ СЂР°Р±РѕС‚Сѓ РїСЂРѕРіСЂР°РјРјС‹." << std::endl;
+		std::cout << "РќР°Р¶РјРёС‚Рµ Enter С‡С‚РѕР±С‹ РїСЂРѕРґРѕР»Р¶РёС‚СЊ." << std::endl;
 		for (int i = 0; i < n; i++)
 			delete[]Matrix[i];
 		delete[] Matrix;

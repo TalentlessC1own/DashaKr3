@@ -1,4 +1,4 @@
-#include "Algoritm.h"
+ï»¿#include "Algoritm.h"
 void ConsoleInput(double** matrix, int n, int m)
 {
 	for (int i = 0; i <n ; i++)
@@ -48,10 +48,10 @@ void ConsoleOutput(double** matrix, int n, int m)
 void ShowResult(std::vector <std::shared_ptr<ISort>>& sorts , int n, int m , double*** matrixs)
 {
 	for (int index = 0; index < 5; index++) {
-		std::cout << "Íàçâàíèå ìåòîäà ñîðòèðîâêè: " << sorts[index]->GetName() << std::endl;
-		std::cout << "Êîëëè÷åñòâî ñðàâíåíèé: " << sorts[index]-> GetComparison() << std::endl;
-		std::cout << "Êîëëè÷åñòâî ïåðåñòàíîâîê: " << sorts[index]->GetPermutation() << std::endl;
-		std::cout << "Ðåçóëüòèðóþùàÿ ìàòðèöà: " << std::endl;
+		std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸: " << sorts[index]->GetName() << std::endl;
+		std::cout << "ÐšÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: " << sorts[index]-> GetComparison() << std::endl;
+		std::cout << "ÐšÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¿ÐµÑ€ÐµÑÑ‚Ð°Ð½Ð¾Ð²Ð¾Ðº: " << sorts[index]->GetPermutation() << std::endl;
+		std::cout << "Ð ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð¸Ñ€ÑƒÑŽÑ‰Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << std::endl;
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < m; j++)
@@ -60,7 +60,7 @@ void ShowResult(std::vector <std::shared_ptr<ISort>>& sorts , int n, int m , dou
 		}
 	}
 	std::cout << std::endl;
-	std::cout << "Íàçâàíèå ìåòîäà ñîðòèðîâêè       ñðàâíåíèÿ        ïåðåñòàíîâîêè" << std::endl;
+	std::cout << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸       ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ        Ð¿ÐµÑ€ÐµÑÑ‚Ð°Ð½Ð¾Ð²Ð¾ÐºÐ¸" << std::endl;
 	for (int index = 0; index < 5; index++) {
 		if (sorts[index]->GetName() == "SelectionSort" || sorts[index]->GetName() == "InsertionSort") {
 			std::cout << sorts[index]->GetName() << "                        " << sorts[index]->GetComparison() << "                  " << sorts[index]->GetPermutation() << std::endl;

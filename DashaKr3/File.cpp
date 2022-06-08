@@ -1,4 +1,4 @@
-#include "File.h"
+ï»¿#include "File.h"
 
 double** InputDataFileInput(int &n,int &m)
 {
@@ -8,16 +8,16 @@ double** InputDataFileInput(int &n,int &m)
 	file.exceptions(std::ifstream::badbit | std::ifstream::failbit);
 	while (true)
 	{
-		std::cout << "Ââåäèòå èìÿ ôàèëà. " << std::endl << "Ââîä : ";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð°. " << std::endl << "Ð’Ð²Ð¾Ð´ : ";
 		std::cin >> file_name;
 		try
 		{
 			file.open(file_name);
-			std::cout << "Ôàèë îòêðûò óñïåøíî " << std::endl;
+			std::cout << "Ð¤Ð°Ð¸Ð» Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ " << std::endl;
 		}
 		catch (const std::exception&)
 		{
-			std::cout << "Íå âåðíîå èìÿ ôàèëà èëè ïóòü.Ïîâòîðèòå ââîä " << std::endl;
+			std::cout << "ÐÐµ Ð²ÐµÑ€Ð½Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð° Ð¸Ð»Ð¸ Ð¿ÑƒÑ‚ÑŒ.ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´ " << std::endl;
 			continue;
 
 
@@ -61,7 +61,7 @@ double** InputDataFileInput(int &n,int &m)
 		catch (int)
 		{
 			file.close();
-			std::cout << "Â ôàèëå ñîäåðæàòñÿ íåêîððåêòíûå äàííûå" << std::endl;
+			std::cout << "Ð’ Ñ„Ð°Ð¸Ð»Ðµ ÑÐ¾Ð´ÐµÑ€Ð¶Ð°Ñ‚ÑÑ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹Ðµ Ð´Ð°Ð½Ð½Ñ‹Ðµ" << std::endl;
 			continue;
 		}
 		file.close();
@@ -82,18 +82,18 @@ void InputDataFileOutput(double** matrix, int n, int m)
 	{
 
 
-		std::cout << "Ââåäèòå èìÿ ôàèëà èëè ïîëíûé ïóòü." << std::endl << "ENTER:";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ð¿ÑƒÑ‚ÑŒ." << std::endl << "ENTER:";
 		std::getline(std::cin, name);
 		if (name.find(".txt") >= std::string::npos) {
-			std::cout << "Íå âåðíûé òèï ôàèëà\n" << std::endl;
+			std::cout << "ÐÐµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ„Ð°Ð¸Ð»Ð°\n" << std::endl;
 			continue;
 		}
 		try
 		{
 			CheckExist.open(name);
-			std::cout << "Ôàèë ñ òàêèì èìåíåì ñóùåñòâóåò. " << std::endl
-				<< "1 - Ïåðåçàïèñàòü ýòîò ôàèë " << std::endl
-				<< "2 - Ââåñòè íîâîå èìÿ ôàèëà " << std::endl;
+			std::cout << "Ð¤Ð°Ð¸Ð» Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚. " << std::endl
+				<< "1 - ÐŸÐµÑ€ÐµÐ·Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÑÑ‚Ð¾Ñ‚ Ñ„Ð°Ð¸Ð» " << std::endl
+				<< "2 - Ð’Ð²ÐµÑÑ‚Ð¸ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð° " << std::endl;
 			int var = GetChoise();
 			if (var == Yes)
 			{
@@ -114,7 +114,7 @@ void InputDataFileOutput(double** matrix, int n, int m)
 			}
 			catch (const std::exception&)
 			{
-				std::cout << " Îøèáêà ñîõðàíåíèÿ " << std::endl;
+				std::cout << " ÐžÑˆÐ¸Ð±ÐºÐ° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ " << std::endl;
 				continue;
 			}
 
@@ -132,7 +132,7 @@ void InputDataFileOutput(double** matrix, int n, int m)
 		FileRecorder << std::endl;
 	}
 	FileRecorder.close();
-	std::cout << "Äàííûå óñïåøíî ñîõðàíåíû" << std::endl;
+	std::cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹" << std::endl;
 
 }
 
@@ -150,18 +150,18 @@ void FileOutput(std::vector<std::shared_ptr<ISort>>& sorts, int n, int m, double
 	{
 
 
-		std::cout << "Ââåäèòå èìÿ ôàèëà èëè ïîëíûé ïóòü." << std::endl << "ENTER:";
+		std::cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð¾Ð»Ð½Ñ‹Ð¹ Ð¿ÑƒÑ‚ÑŒ." << std::endl << "ENTER:";
 		std::getline(std::cin, name);
 		if (name.find(".txt") >= std::string::npos) {
-			std::cout << "Íå âåðíûé òèï ôàèëà\n" << std::endl;
+			std::cout << "ÐÐµ Ð²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð¸Ð¿ Ñ„Ð°Ð¸Ð»Ð°\n" << std::endl;
 			continue;
 		}
 		try
 		{
 			CheckExist.open(name);
-			std::cout << "Ôàèë ñ òàêèì èìåíåì ñóùåñòâóåò. " << std::endl
-				<< "1 - Ïåðåçàïèñàòü ýòîò ôàèë " << std::endl
-				<< "2 - Ââåñòè íîâîå èìÿ ôàèëà " << std::endl;
+			std::cout << "Ð¤Ð°Ð¸Ð» Ñ Ñ‚Ð°ÐºÐ¸Ð¼ Ð¸Ð¼ÐµÐ½ÐµÐ¼ ÑÑƒÑ‰ÐµÑÑ‚Ð²ÑƒÐµÑ‚. " << std::endl
+				<< "1 - ÐŸÐµÑ€ÐµÐ·Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ ÑÑ‚Ð¾Ñ‚ Ñ„Ð°Ð¸Ð» " << std::endl
+				<< "2 - Ð’Ð²ÐµÑÑ‚Ð¸ Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð¼Ñ Ñ„Ð°Ð¸Ð»Ð° " << std::endl;
 			int var = GetChoise();
 			if (var == Yes)
 			{
@@ -182,7 +182,7 @@ void FileOutput(std::vector<std::shared_ptr<ISort>>& sorts, int n, int m, double
 			}
 			catch (const std::exception&)
 			{
-				std::cout << " Îøèáêà ñîõðàíåíèÿ " << std::endl;
+				std::cout << " ÐžÑˆÐ¸Ð±ÐºÐ° ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ " << std::endl;
 				continue;
 			}
 
@@ -191,7 +191,7 @@ void FileOutput(std::vector<std::shared_ptr<ISort>>& sorts, int n, int m, double
 
 
 	}
-	FileRecorder << "Îòñîðòèðîâàíàÿ ìàòðèöà: " << std::endl;
+	FileRecorder << "ÐžÑ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð°Ñ Ð¼Ð°Ñ‚Ñ€Ð¸Ñ†Ð°: " << std::endl;
 		for (int i = 0; i < n; i++)
 		{
 			for (int j = 0; j < m; j++)
@@ -200,12 +200,12 @@ void FileOutput(std::vector<std::shared_ptr<ISort>>& sorts, int n, int m, double
 		}
 		FileRecorder << std::endl;
 	for (int index = 0; index < 5; index++) {
-		FileRecorder << "Íàçâàíèå ìåòîäà ñîðòèðîâêè: " << sorts[index]->GetName() << std::endl;
-		FileRecorder << "Êîëëè÷åñòâî ñðàâíåíèé: " << sorts[index]->GetComparison() << std::endl;
-		FileRecorder << "Êîëëè÷åñòâî ñðàâíåíèé: " << sorts[index]->GetPermutation() << std::endl;
+		FileRecorder << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸: " << sorts[index]->GetName() << std::endl;
+		FileRecorder << "ÐšÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: " << sorts[index]->GetComparison() << std::endl;
+		FileRecorder << "ÐšÐ¾Ð»Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ð¹: " << sorts[index]->GetPermutation() << std::endl;
 	}
 	FileRecorder << std::endl;
-	FileRecorder << "Íàçâàíèå ìåòîäà ñîðòèðîâêè       ñðàâíåíèÿ        ïåðåñòàíîâîêè" << std::endl;
+	FileRecorder << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸       ÑÑ€Ð°Ð²Ð½ÐµÐ½Ð¸Ñ        Ð¿ÐµÑ€ÐµÑÑ‚Ð°Ð½Ð¾Ð²Ð¾ÐºÐ¸" << std::endl;
 	for (int index = 0; index < 5; index++) {
 		if (sorts[index]->GetName() == "SelectionSort" || sorts[index]->GetName() == "InsertionSort") {
 			FileRecorder << sorts[index]->GetName() << "                        " << sorts[index]->GetComparison() << "                  " << sorts[index]->GetPermutation() << std::endl;
@@ -217,7 +217,7 @@ void FileOutput(std::vector<std::shared_ptr<ISort>>& sorts, int n, int m, double
 			FileRecorder << sorts[index]->GetName() << "                            " << sorts[index]->GetComparison() << "                 " << sorts[index]->GetPermutation() << std::endl;
 		}
 	}
-	std::cout << "Äàííûå óñïåøíî ñîõðàíåíû" << std::endl;
+	std::cout << "Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹" << std::endl;
 
 	FileRecorder.close();
 }

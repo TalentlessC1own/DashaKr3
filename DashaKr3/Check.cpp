@@ -1,4 +1,4 @@
-#include "Check.h"
+п»ї#include "Check.h"
 int GetPositiveInt()
 {
 
@@ -12,7 +12,7 @@ int GetPositiveInt()
               
             }
             else {
-                throw std::invalid_argument("Были введены не корректные данные. Повторите ввод.");
+                throw std::invalid_argument("Р‘С‹Р»Рё РІРІРµРґРµРЅС‹ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ. РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ.");
             }
         }
         catch (std::invalid_argument& e) {
@@ -33,8 +33,8 @@ double CheckLineD(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Произошла ошибка при чтении информации из фаила: " << std::endl;
-        throw std::invalid_argument("Были введены не корректные данные. Повторите ввод.");
+        std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё С‡С‚РµРЅРёРё РёРЅС„РѕСЂРјР°С†РёРё РёР· С„Р°РёР»Р°: " << std::endl;
+        throw std::invalid_argument("Р‘С‹Р»Рё РІРІРµРґРµРЅС‹ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ. РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ.");
 
     }
     try
@@ -60,7 +60,7 @@ int CheckLineI(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Произошла ошибка при чтении информации из фаила: " << std::endl;
+        std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё С‡С‚РµРЅРёРё РёРЅС„РѕСЂРјР°С†РёРё РёР· С„Р°РёР»Р°: " << std::endl;
         throw 1;
 
     }
@@ -78,7 +78,7 @@ int CheckLineI(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Не верный тип данных" << std::endl;
+        std::cout << "РќРµ РІРµСЂРЅС‹Р№ С‚РёРї РґР°РЅРЅС‹С…" << std::endl;
         throw 1;
     }
 }
@@ -93,7 +93,7 @@ std::string CheckLineS(std::ifstream& file)
     }
     catch (const std::exception&)
     {
-        std::cout << "Произошла ошибка при чтении информации из фаила:" << std::endl;
+        std::cout << "РџСЂРѕРёР·РѕС€Р»Р° РѕС€РёР±РєР° РїСЂРё С‡С‚РµРЅРёРё РёРЅС„РѕСЂРјР°С†РёРё РёР· С„Р°РёР»Р°:" << std::endl;
         throw 1;
 
     }
@@ -113,7 +113,7 @@ int Get3Choise()
 
             }
             else {
-                throw std::invalid_argument("Были введены не корректные данные. Повторите ввод.");
+                throw std::invalid_argument("Р‘С‹Р»Рё РІРІРµРґРµРЅС‹ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ. РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ.");
             }
         }
      
@@ -140,7 +140,7 @@ int GetChoise()
 
             }
             else {
-                throw std::invalid_argument("Были введены не корректные данные. Повторите ввод.");
+                throw std::invalid_argument("Р‘С‹Р»Рё РІРІРµРґРµРЅС‹ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ. РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ.");
             }
         }
       
@@ -163,7 +163,7 @@ double GetDouble()
                 return value;
         }
             else {
-                throw std::invalid_argument("Были введены не корректные данные. Повторите ввод.");
+                throw std::invalid_argument("Р‘С‹Р»Рё РІРІРµРґРµРЅС‹ РЅРµ РєРѕСЂСЂРµРєС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ. РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ.");
             }
         }
         catch (std::invalid_argument& e) {
