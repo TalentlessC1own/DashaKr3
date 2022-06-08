@@ -21,24 +21,28 @@ double** SelectionSort::Sort(double** Matrix, int n, int m)
             if (new_matrix[i][j] < 0)
                 negative[i].emplace_back(NegativeNunb(new_matrix[i][j], i, j));
         }
-    for(int n = 0; n < negative.size();n++)
-    for (int i = 0; i < negative[n].size() - 1; i++)
+    for (int q = 0; q < negative.size(); q++)
     {
-        int tmp = negative[n][i].numb;
-        int tmpid = i;
-        for (int j = i + 1; j < negative[n].size(); j++)
+        if (negative[q].size() == 0)
+            continue;
+        for (int i = 0; i < negative[q].size() - 1; i++)
         {
-            comparison_counter++;
-            if (negative[n][tmpid].numb > negative[n][j].numb)
+            double tmp = negative[q][i].numb;
+            int tmpid = i;
+            for (int j = i + 1; j < negative[q].size(); j++)
             {
-                tmp = negative[n][j].numb;
-                tmpid = j;
+                comparison_counter++;
+                if (negative[q][tmpid].numb > negative[q][j].numb)
+                {
+                    tmp = negative[q][j].numb;
+                    tmpid = j;
+                }
             }
-        }
-        if (tmpid != i)
-        {
-            permutation_counter++;
-            std::swap(negative[n][i].numb, negative[n][tmpid].numb);
+            if (tmpid != i)
+            {
+                permutation_counter++;
+                std::swap(negative[q][i].numb, negative[q][tmpid].numb);
+            }
         }
     }
     for (int i = 0; i < negative.size();i++)
@@ -70,23 +74,23 @@ double** InsertionSort::Sort(double** Matrix, int n, int m)
             if (new_matrix[i][j] < 0)
                 negative[i].emplace_back(NegativeNunb(new_matrix[i][j], i, j));
         }
-    for (int n = 0; n < negative.size(); n++)
-        for (int k = 1; k < negative[n].size(); k++)
+    for (int q = 0; q < negative.size(); q++)
+        for (int k = 1; k < negative[q].size(); k++)
         {
-            double temp = negative[n][k].numb;
+            double temp = negative[q][k].numb;
             int j = k - 1;
             comparison_counter++;
-            while (j >= 0 && temp < negative[n][j].numb)
+            while (j >= 0 && temp < negative[q][j].numb)
             {
                 comparison_counter++;
                 permutation_counter++;
-                negative[n][j + 1].numb = negative[n][j].numb;
+                negative[q][j + 1].numb = negative[q][j].numb;
                 j--;
                 if (j == 0)
                     comparison_counter --;
 
             }
-            negative[n][j + 1].numb = temp;
+            negative[q][j + 1].numb = temp;
         }
     for (int i = 0; i < negative.size(); i++)
         for (int j = 0; j < negative[i].size(); j++)
@@ -116,20 +120,20 @@ double** ShellSort::Sort(double** Matrix, int n, int m)
                 negative[i].emplace_back(NegativeNunb(new_matrix[i][j], i, j));
         }
     
-    for (int n = 0; n < negative.size(); n++)
+    for (int q = 0; q < negative.size(); q++)
     {
-        for (int gap = negative[n].size(); gap > 0; gap /= 2) {
-            for (int i = gap; i < negative[n].size(); i++) {
+        for (int gap = static_cast<int>(negative[q].size())/2; gap > 0; gap /= 2) {
+            for (int i = gap; i < negative[q].size(); i++) {
 
-                double temp = negative[n][i].numb;
-                int k = i;
+                double temp = negative[q][i].numb;
+                int k;
                 comparison_counter++;
-                for (k = i; k >= gap && negative[n][k - gap].numb > temp; k -= gap) {
-                    negative[n][k].numb = negative[n][k - gap].numb; permutation_counter++;
+                for (k = i; k >= gap && negative[q][k - gap].numb > temp; k -= gap) {
+                    negative[q][k].numb = negative[q][k - gap].numb; permutation_counter++;
                     if (k == gap)
                         comparison_counter--;
                 }
-                negative[n][k].numb = temp;
+                negative[q][k].numb = temp;
             }
         }
     }
@@ -160,14 +164,18 @@ double** BubbleSort::Sort(double** Matrix, int n, int m)
             if (new_matrix[i][j] < 0)
                 negative[i].emplace_back(NegativeNunb(new_matrix[i][j], i, j));
         }
-    for (int n = 0; n < negative.size(); n++){
-        for (int j = 0; j < negative[n].size() - 1; j++) {
+    
+   
+    for (int q = 0; q < negative.size(); q++){
+        if (negative[q].size() == 0)
+            continue;
+        for (int j = 0; j < (negative[q].size() - 1); j++) {
             bool flag = true;
-            for (int k = 0; k < negative[n].size() - (j + 1); k++) {
+            for (int k = 0; k < m - (j + 1); k++) {
                 comparison_counter++;
-                if (negative[n][k].numb > negative[n][k + 1].numb) {
+                if (negative[q][k].numb > negative[q][k + 1].numb) {
                     flag = false;
-                    swap(negative[n][k].numb, negative[n][k + 1].numb);
+                    swap(negative[q][k].numb, negative[q][k + 1].numb);
                     permutation_counter++;
                 }
             }
@@ -208,7 +216,7 @@ int QuickSortMat::Partition(std::vector <NegativeNunb>& arr, int start, int end)
     }
    
         swap(arr[j].numb, arr[pivot].numb);
-        if (permutation_counter > 0)
+        if(j != pivot)
             permutation_counter ++;
   
     return j;
@@ -235,7 +243,7 @@ double** QuickSortMat::Sort(double** Matrix, int n, int m)
                negative[i].emplace_back(NegativeNunb(new_matrix[i][j], i, j));
        }
    for (int i = 0; i < negative.size(); i++) {
-           QuickSort(negative[i], 0, negative[i].size() - 1);
+           QuickSort(negative[i], 0, static_cast<int>(negative[i].size() - 1));
    }
    for (int i = 0; i < negative.size(); i++)
        for (int j = 0; j < negative[i].size(); j++)
