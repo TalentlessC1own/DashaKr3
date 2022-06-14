@@ -68,6 +68,15 @@ int main(void) {
 				RandomInput(Matrix[0], n, m);
 				break;
 		case (file_input):
+			//ShowMenuPoint(&n, &m);
+			Matrix = new double** [sorts_count];
+			for (int j = 0; j < sorts_count; j++)
+			{
+				Matrix[j] = new double* [n];
+				for (int i = 0; i < n; i++) {
+					Matrix[j][i] = new double[m];
+				}
+			}
 			Matrix[0] = InputDataFileInput(n, m);
 			break;
 		}
