@@ -68,7 +68,6 @@ int main(void) {
 				RandomInput(Matrix[0], n, m);
 				break;
 		case (file_input):
-			//ShowMenuPoint(&n, &m);
 			Matrix = new double** [sorts_count];
 			for (int j = 0; j < sorts_count; j++)
 			{
