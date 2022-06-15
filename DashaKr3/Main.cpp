@@ -68,6 +68,7 @@ int main(void) {
 				RandomInput(Matrix[0], n, m);
 				break;
 		case (file_input):
+			double** temp_matrix = InputDataFileInput(n, m);
 			Matrix = new double** [sorts_count];
 			for (int j = 0; j < sorts_count; j++)
 			{
@@ -76,7 +77,7 @@ int main(void) {
 					Matrix[j][i] = new double[m];
 				}
 			}
-			Matrix[0] = InputDataFileInput(n, m);
+			Matrix[0] = temp_matrix;
 			break;
 		}
 		std::cout << "Исходная матрица" << std::endl;
